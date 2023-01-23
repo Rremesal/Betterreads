@@ -23,11 +23,11 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->date('date_of_birth');
-            $table->string('gender');
-            $table->string('twitter_url')->unique();
-            $table->string('website_url')->unique();
-            $table->string('profile_url')->unique();
+            $table->date('date_of_birth')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('twitter_url')->unique()->nullable();
+            $table->string('website_url')->unique()->nullable();
+            $table->string('profile_url')->unique()->nullable();
             $table->boolean('isAuthor')->default(0);
             $table->boolean('isAdmin')->default(0);
             $table->timestamp('email_verified_at')->nullable();
