@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('website_url')->unique();
             $table->string('profile_url')->unique();
             $table->boolean('isAuthor')->default(0);
+            $table->boolean('isAdmin')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
