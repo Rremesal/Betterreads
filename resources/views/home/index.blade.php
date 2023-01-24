@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="flex flex-col w-52 items-center border-2 shadow-lg">
+    <div class="flex flex-col w-52 items-center border-2 shadow-lg absolute lg:right-1/3 md:right-1/4 invisible" id="profile-menu">
         <span class="font-semibold">{{ Auth::user()->first_name." ".Auth::user()->last_name }}</span>
         <a class="text-blue-400 hover:underline w-full" href="">Profile</a>
         <a class="text-blue-400 hover:underline w-full" href="">Comments</a>
