@@ -47,7 +47,7 @@
 
                 <div class="w-72 text-sm mb-3">By creating an account, you agree to the Betterreads <a class="text-blue-400 hover:underline" href="">Terms of Service</a> and <a class="text-blue-400 hover:underline" href="">Privacy Policy</a></div>
 
-                <div>Already have an account? <a class="text-blue-400 hover:underline" href="">Sign in</a></div>
+                <div>Already have an account? <a class="text-blue-400 hover:underline" href="{{ route('login') }}">Sign in</a></div>
             </div>
         </form>
     </div>

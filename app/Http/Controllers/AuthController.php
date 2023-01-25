@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -32,10 +34,22 @@ class AuthController extends Controller
         }
         
         return redirect()->route('home');
+    }
 
+    public function login() {
+        return view('auth.login');
+    }
 
+    public function login_user() {
+        $credentials = request()->validate([
+            'email' => ['required'],
+            'password' => ['required']
+        ]);
 
+        if(!Auth::attempt($credentials)) {
+            throw ValidationException::withMessages(['email' => 'The provided credentials could not be verified']);
+        }
 
-
+        return redirect()->route('home');
     }
 }
